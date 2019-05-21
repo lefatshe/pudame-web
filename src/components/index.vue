@@ -6,8 +6,15 @@
         <h4>{{ list.title }}</h4>
         <p class="text">{{list.detail}}</p>
         <div class="controls">
-          <i @click="deleteItem(list)">delete</i>
-          <i @click="viewItem(list)">MORE...</i>
+          
+          <span>
+            <router-link :to="{name: 'Edit', params:{list_slug: list.slug}}">
+              Edit
+            </router-link>
+          </span>
+
+          <i @click="deleteItem(list)">Delete</i>
+          <i @click="viewItem(list)">More...</i>
           <i class="pull-right" @click="viewItem(list)">POINTS ( {{list.hits}} /6 )</i>
         </div>
 
